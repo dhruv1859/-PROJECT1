@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechHub - Innovate Together</title>
+    
+    <link rel="icon" href="images/techhub.png" type="image/x-icon">
+    <style>
+        /* ⚠️⚠️⚠️⚠️ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #111;
+            color: #f5f5f5;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: #000;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.7);
+        }
+
+        .navbar .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #e50914;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .navbar .nav-links li {
+            font-size: 1.1rem;
+        }
+
+        .navbar .nav-links a {
+            color: #f5f5f5;
+            text-decoration: none;
+            padding: 8px 20px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #e50914;
+            border-bottom: 2px solid #e50914;
+        }
+         /* Navbar */
+         .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .navbar h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ff4c60;
+            text-transform: uppercase;
+        }
+
+        .navbar a {
+            color: #fff;
+            font-size: 1rem;
+            margin: 0 12px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #ff4c60;
+        }
+
+        .navbar a.active {
+            color: #ff4c60;
+            font-weight: bold;
+        }
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #e50914, #8b0000);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 30px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .hero a {
+            text-decoration: none;
+            color: #fff;
+            background: #e50914;
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .hero a:hover {
+            background: #fff;
+            color: #e50914;
+            box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Features Section */
+        .features {
+            background: #111;
+            padding: 80px 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .features h2 {
+            font-size: 2.5rem;
+            color: #e50914;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .feature-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: #1a1a1a;
+            width: 300px;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: left;
+            color: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.9);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            color: #e50914;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card a {
+            text-decoration: none;
+            color: #e50914;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .feature-card a:hover {
+            color: #fff;
+        }
+
+        /* About Section */
+        .about {
+            background: #222;
+            padding: 60px 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #e50914;
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Tech Trends Section */
+        .tech-trends {
+            background: #1a1a1a;
+            padding: 80px 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .tech-trends h2 {
+            font-size: 2.5rem;
+            color: #e50914;
+            margin-bottom: 40px;
+        }
+
+        .trend-cards {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .trend-card {
+            background: #333;
+            padding: 25px;
+            border-radius: 15px;
+            width: 350px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .trend-card h3 {
+            font-size: 1.8rem;
+            color: #e50914;
+            margin-bottom: 20px;
+        }
+
+        .trend-card p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        /* Blog Section */
+        .blog {
+            background: #222;
+            padding: 60px 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .blog h2 {
+            font-size: 2.5rem;
+            color: #e50914;
+            margin-bottom: 40px;
+        }
+
+        .blog-posts {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .blog-post {
+            background: #333;
+            width: 350px;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .blog-post:hover {
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.8);
+            transform: translateY(-5px);
+        }
+
+        .blog-post h3 {
+            font-size: 1.6rem;
+            color: #e50914;
+            margin-bottom: 15px;
+        }
+
+        .blog-post p {
+            font-size: 1rem;
+            color: #ddd;
+        }
+
+        .blog-post a {
+            text-decoration: none;
+            color: #e50914;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .blog-post a:hover {
+            color: #fff;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: #333;
+            padding: 80px 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .testimonials h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #e50914;
+        }
+
+        .testimonial-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: #444;
+            width: 350px;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+            text-align: left;
+        }
+
+        .testimonial-card p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-card h4 {
+            font-size: 1.2rem;
+            color: #e50914;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #111;
+            padding: 80px 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            color: #e50914;
+            margin-bottom: 40px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            background: #222;
+            color: #fff;
+            border: 1px solid #444;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+
+        .contact-form button {
+            padding: 15px 30px;
+            background: #e50914;
+            color: #fff;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background: #fff;
+            color: #e50914;
+        }
+
+        /* Footer Styles */
+        footer {
+            padding: 40px 20px;
+            background: #0a0a0a;
+            text-align: center;
+            color: #ddd;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        footer h3 {
+            color: #ff2a68;
+            text-shadow: 0 0 10px rgba(255, 42, 104, 1);
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin: 10px 0;
+        }
+
+        footer ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        footer ul li a:hover {
+            color: #ff2a68;
+            text-shadow: 0 0 10px rgba(255, 42, 104, 1);
+        }
+
+        footer img {
+            width: 35px;
+            margin: 0 5px;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        footer img:hover {
+            transform: scale(1.2);
+            filter: brightness(1.5);
+        }
+
+        footer .copy {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            #navlist {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            section {
+                padding: 15px;
+            }
+
+            .discussion-section input,
+            .discussion-section textarea {
+                width: 80%;
+            }
+
+            .poll-options {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">TechHub</div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="faqs.html" class="active">FAQs</a></li>
+            <li><a href="About_us.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="https://forms.gle/HjHu85DN9PMzi6Ac8">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div>
+            <h1>Innovate, Connect, Transform</h1>
+            <p>Join TechHub to turn your ideas into reality. We're here to empower creators and builders.</p>
+            <a href="#features">Explore Now</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2>Why Choose TechHub?</h2>
+        <div class="feature-cards">
+            <div class="feature-card">
+                <h3>Innovative Community</h3>
+                <p>Be a part of a thriving tech community that fosters creativity, collaboration, and growth.</p>
+                <a href="#contact">Join Us</a>
+            </div>
+            <div class="feature-card">
+                <h3>Exciting Events</h3>
+                <p>Participate in workshops, hackathons, and meetups that boost your skills and career.</p>
+                <a href="events.html">Learn More</a>
+            </div>
+            <div class="feature-card">
+                <h3>Career Growth</h3>
+                <p>Gain mentorship and networking opportunities to accelerate your tech career.</p>
+                <a href="#contact">Explore Careers</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>About TechHub</h2>
+        <p>TechHub is your ultimate companion in the world of technology. Whether you're a developer, entrepreneur, or aspiring innovator, we offer all the resources you need to grow and succeed in the tech world. Our platform combines community, events, and cutting-edge content to foster innovation and collaboration.</p>
+    </section>
+
+    <!-- Tech Trends Section -->
+    <section class="tech-trends" id="tech-trends">
+        <h2>Stay Ahead with Tech Trends</h2>
+        <div class="trend-cards">
+            <div class="trend-card">
+                <h3>Artificial Intelligence</h3>
+                <p>AI is transforming industries and redefining human potential. Learn how to harness its power to solve real-world problems.</p>
+            </div>
+            <div class="trend-card">
+                <h3>Blockchain Technology</h3>
+                <p>Blockchain is more than just cryptocurrency. Explore how it's revolutionizing industries like finance, healthcare, and supply chains.</p>
+            </div>
+            <div class="trend-card">
+                <h3>Cybersecurity</h3>
+                <p>With cyber threats on the rise, it's crucial to stay up-to-date on the latest trends in cybersecurity. Learn how to protect your digital assets.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog" id="blog">
+        <h2>From Our Blog</h2>
+        <div class="blog-posts">
+            <div class="blog-post">
+                <h3>The Future of AI in Software Development</h3>
+                <p>Artificial Intelligence is revolutionizing software development processes, making coding faster, smarter, and more efficient...</p>
+                <a href="https://brainhub.eu/library/software-developer-age-of-ai">Read More</a>
+            </div>
+            <div class="blog-post">
+                <h3>5 Ways to Build a Secure Blockchain Network</h3>
+                <p>Blockchain is a disruptive technology that needs careful implementation. Here's how you can ensure your network is secure...</p>
+                <a href="https://rejolut.com/blog/creating-your-own-blockchain-network/">Read More</a>
+            </div>
+            <div class="blog-post">
+                <h3>Top 10 Programming Languages to Learn in 2024</h3>
+                <p>With the rapid evolution of technology, some programming languages are gaining more attention than others. Here’s a breakdown...</p>
+                <a href="https://www.geeksforgeeks.org/best-programming-languages-to-learn-article/">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <h2>What Our Members Say</h2>
+        <div class="testimonial-cards">
+            <div class="testimonial-card">
+                <p>"TechHub has been an amazing platform for me. I’ve learned so much and made connections that have truly helped my career."</p>
+                <h4>Palak B.</h4>
+            </div>
+            <div class="testimonial-card">
+                <p>"The community here is vibrant and supportive. Whether you're a beginner or a pro, TechHub has something for everyone!"</p>
+                <h4>Dhruv A.</h4>
+            </div>
+            <div class="testimonial-card">
+                <p>"Attending TechHub's hackathons and workshops has accelerated my learning like nothing else. It’s a game changer!"</p>
+                <h4>Rakshita S.</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Get in Touch</h2>
+        <form class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+     <!-- Footer -->
+     <footer>
+        <h3>About TechHub</h3>
+        <p>TechHub connects innovators, environmentalists, and experts for a sustainable future.</p>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="Stories.html">Stories</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+        </ul>
+        <div>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+        <p class="copy">©️ 2024 TechHub. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

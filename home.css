@@ -1,0 +1,195 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1A1A1A;
+  color: #fff;
+}
+
+header {
+  background-color: #333;
+  padding: 20px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+header #navlist {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+header #navlist a {
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+header #navlist a:hover {
+  color: #4CAF50;
+  transform: scale(1.1);
+}
+
+marquee {
+  font-size: 18px;
+  color: #333;
+  background-color: #4CAF50;
+  padding: 10px 0;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 40px;
+  color: #4CAF50;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+/* Section Styles */
+section img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+section img:hover {
+  transform: scale(1.05);
+}
+
+/* Row and Card Styles */
+.row {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0;
+  gap: 30px;
+}
+
+.column {
+  flex: 1;
+  margin: 0 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  background: linear-gradient(135deg, #4CAF50, #8BC34A);
+  border-radius: 10px;
+  padding: 30px;
+  width: 100%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 a {
+  color: #fff;
+  font-size: 26px;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.card p {
+  color: #f7f7f7;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.card p.title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* NEECHE WALO KA SECTION */
+footer {
+  background-color: #222;
+  color: #fff;
+  padding: 50px 0;
+  text-align: center;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+footer .container h3 {
+  margin-bottom: 20px;
+}
+
+footer .social a {
+  margin: 0 15px;
+  color: #fff;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+footer .social a:hover {
+  color: #4CAF50;
+}
+
+footer .social img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+footer .social img:hover {
+  transform: scale(1.1);
+}
+
+footer .copy {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .row {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  footer .container {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+header {
+  background-color: #333;
+  padding: 20px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  position: fixed; /* Makes the navbar sticky */
+  top: 0; /* Positions the navbar at the top */
+  left: 0; /* Ensures the navbar spans the full width */
+  width: 100%; /* Full width of the viewport */
+  z-index: 1000; /* Ensures the navbar appears above other elements */
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  margin-top: 70px; /* Adjusts the margin to prevent content overlap with the navbar */
+  background-color: #1A1A1A;
+  color: #fff;
+}

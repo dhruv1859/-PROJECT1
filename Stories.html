@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TechHub Stories</title>
+    <link rel="icon" type="image/x-icon" href="images/techhub-icon.png">
+    
+    <style>
+        /* ⚠️⚠️⚠️⚠️ */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0a0a0a, #2c2c2c);
+            color: #e6e6e6;
+            line-height: 1.6;
+        }
+
+        /* Navbar Styles */
+        header {
+            background: linear-gradient(135deg, #1a1a1a, #b91d28);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #navlist {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        #navlist a {
+            text-decoration: none;
+            color: #f4f4f4;
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 12px 20px;
+            text-transform: uppercase;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        #navlist a:hover {
+            color: #fff;
+            background: #b91d28;
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(185, 29, 40, 0.8);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 120px 20px;
+            background: linear-gradient(135deg, #ff2a68, #1a1a1a);
+            color: white;
+            box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            text-shadow: 0 0 15px rgba(255, 42, 104, 1);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        /* Section Styles */
+        section {
+            margin: 40px auto;
+            padding: 20px;
+            max-width: 1000px;
+            background: #222;
+            border-radius: 15px;
+            border: 2px solid #ff2a68;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 2s ease-in;
+        }
+
+        section h2, section h3 {
+            color: #ff2a68;
+            text-shadow: 0 0 10px rgba(255, 42, 104, 1);
+        }
+
+        section p {
+            font-size: 1.2rem;
+            margin-top: 15px;
+        }
+
+        section img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 2px solid #ff2a68;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 42, 104, 1);
+        }
+
+        /* Poll Section */
+        .poll-section {
+            background: #444;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .poll-section h3 {
+            color: #ff2a68;
+            text-shadow: 0 0 10px rgba(255, 42, 104, 1);
+        }
+
+        .poll-options {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .poll-options label {
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .poll-options input {
+            margin-right: 8px;
+        }
+
+        /* Feedback and Discussion Section */
+        .discussion-section {
+            background: #333;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 15px;
+            margin-top: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .discussion-section h3 {
+            color: #ff2a68;
+            text-shadow: 0 0 10px rgba(255, 42, 104, 1);
+        }
+
+        .discussion-section form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .discussion-section input,
+        .discussion-section textarea {
+            background: #444;
+            color: #fff;
+            padding: 12px;
+            width: 60%;
+            border: 1px solid #ff2a68;
+            border-radius: 7px;
+            margin: 10px 0;
+        }
+
+        .discussion-section button {
+            background: #ff2a68;
+            color: #fff;
+            padding: 15px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .discussion-section button:hover {
+            background: #fff;
+            color: #ff2a68;
+        }
+
+        /* Footer Styles */
+        footer {
+            padding: 40px 20px;
+            background: #0a0a0a;
+            text-align: center;
+            color: #ddd;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        footer h3 {
+            color: #ff2a68;
+            text-shadow: 0 0 10px rgba(255, 42, 104, 1);
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin: 10px 0;
+        }
+
+        footer ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        footer ul li a:hover {
+            color: #ff2a68;
+            text-shadow: 0 0 10px rgba(255, 42, 104, 1);
+        }
+
+        footer img {
+            width: 35px;
+            margin: 0 5px;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        footer img:hover {
+            transform: scale(1.2);
+            filter: brightness(1.5);
+        }
+
+        footer .copy {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            #navlist {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            section {
+                padding: 15px;
+            }
+
+            .discussion-section input,
+            .discussion-section textarea {
+                width: 80%;
+            }
+
+            .poll-options {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div id="navlist">
+            <a href="home.html">Home</a>
+            <a href="events.html">Events</a>
+            <a href="About_us.html">About Us</a>
+            <a href="https://forms.gle/HjHu85DN9PMzi6Ac8">Contact</a>
+            <a href="https://forms.gle/WD4GemTBx7bBemTG7">Feedback</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Welcome to TechHub</h1>
+        <p>Your gateway to a greener, tech-driven future!</p>
+    </section>
+
+    <!-- Story Sections -->
+    <section>
+        <h2>3 People-Powered Wins in India’s Environmental History</h2>
+        <p><em>On this 78th Independence Day, we look back at 3 milestones when people-power won major environmental battles in India.</em></p>
+        
+        <h3>1. Prevention of Environmental Degradation through Corporate Accountability</h3>
+        <p>TechHub played a pivotal role in opposing any attempts to weaken environmental protection laws...</p>
+        <img src="https://i2.wp.com/www.dianuke.org/wp-content/uploads/2012/06/Jaitapur-nuclear-protest.jpg?fit=600%2C400&ssl=1" alt="Protest against environmental degradation">
+
+        <h3>2. The GM Crop Controversy: India’s Bold Stand Against Risky Biotechnology</h3>
+        <p>The Biotechnology Regulatory Authority of India (BRAI) Bill 2011 unleashed a firestorm of opposition...</p>
+        <img src="8.jpg" alt="Protest against GM crops">
+
+        <h3>3. Kedia: Pioneering India's First Ecological Village</h3>
+        <p>The transformation of Kedia, a small village in Bihar, into India's first ecological village...</p>
+        <img src="9.jpeg" alt="Kedia ecological village">
+    </section>
+
+    <!-- Poll Section -->
+    <section class="poll-section">
+        <h3>What do you think is the most important environmental issue today?</h3>
+        <div class="poll-options">
+            <label><input type="radio" name="poll1" value="Climate Change"> Climate Change</label>
+            <label><input type="radio" name="poll1" value="Deforestation"> Deforestation</label>
+            <label><input type="radio" name="poll1" value="Pollution"> Pollution</label>
+        </div>
+    </section>
+
+    <section class="poll-section">
+        <h3>Which of these environmental initiatives do you support?</h3>
+        <div class="poll-options">
+            <label><input type="radio" name="poll2" value="Solar Energy"> Solar Energy</label>
+            <label><input type="radio" name="poll2" value="Green Mobility"> Green Mobility</label>
+            <label><input type="radio" name="poll2" value="Waste Management"> Waste Management</label>
+        </div>
+    </section>
+
+    <!-- Feedback and Discussion Section -->
+    <section class="discussion-section" id="feedback">
+        <h3>Share Your Thoughts</h3>
+        <p>We want to hear from you! Share your thoughts, ideas, and solutions for a better planet.</p>
+        <form>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <textarea name="message" rows="4" placeholder="Your Message..." required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3>About TechHub</h3>
+        <p>TechHub connects innovators, environmentalists, and experts for a sustainable future.</p>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="Stories.html">Stories</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+        </ul>
+        <div>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+        <p class="copy">©️ 2024 TechHub. All rights reserved.</p>
+    </footer>
+</body>
+</html>

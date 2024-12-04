@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechHub - About Us</title>
+    <link rel="stylesheet" href="about.css">
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #1a1a2e, #16213e);
+            color: #f9f9f9;
+            margin-top: 70px;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .navbar h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ff4c60;
+            text-transform: uppercase;
+        }
+
+        .navbar a {
+            color: #fff;
+            font-size: 1rem;
+            margin: 0 12px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #ff4c60;
+        }
+
+        .navbar a.active {
+            color: #ff4c60;
+            font-weight: bold;
+        }
+
+        /* Welcome Section */
+        .welcome-section {
+            background: linear-gradient(135deg, #ff4c60, #ff758c);
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .welcome-section h2 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .welcome-section p {
+            font-size: 1.2rem;
+            color: #ffebf0;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .about-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ff758c;
+        }
+
+        .about-section p {
+            max-width: 700px;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin: 0 auto;
+            color: #e3e3e3;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 60px 20px;
+            background: #1a1a2e;
+        }
+
+        .team-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #ff4c60;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background: linear-gradient(145deg, #2f2f44, #23233c);
+            margin: 15px;
+            padding: 30px;
+            width: 280px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .card img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #ff4c60;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #ff758c;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #d3d3d3;
+        }
+
+       /* Footer Styles */
+       footer {
+        padding: 40px 20px;
+        background: #0a0a0a;
+        text-align: center;
+        color: #ddd;
+        box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    footer h3 {
+        color: #ff2a68;
+        text-shadow: 0 0 10px rgba(255, 42, 104, 1);
+    }
+
+    footer ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    footer ul li {
+        margin: 10px 0;
+    }
+
+    footer ul li a {
+        color: #ddd;
+        text-decoration: none;
+        transition: color 0.3s, text-shadow 0.3s;
+    }
+
+    footer ul li a:hover {
+        color: #ff2a68;
+        text-shadow: 0 0 10px rgba(255, 42, 104, 1);
+    }
+
+    footer img {
+        width: 35px;
+        margin: 0 5px;
+        transition: transform 0.3s, filter 0.3s;
+    }
+
+    footer img:hover {
+        transform: scale(1.2);
+        filter: brightness(1.5);
+    }
+
+    footer .copy {
+        margin-top: 20px;
+        font-size: 0.9rem;
+        color: #aaa;
+    }
+    /* Mobile Styles */
+        @media (max-width: 768px) {
+            #navlist {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            section {
+                padding: 15px;
+            }
+
+            .discussion-section input,
+            .discussion-section textarea {
+                width: 80%;
+            }
+
+            .poll-options {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <h1>TechHub</h1>
+                <div>
+                    <a href="home.html">Home</a>
+                    <a href="events.html">Events</a>
+                    <a href="about_us.html" class="active">About Us</a>
+                    <a href="https://forms.gle/HjHu85DN9PMzi6Ac8">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="welcome-section">
+        <h2>Welcome to TechHub!</h2>
+        <p>Your go-to platform for all things tech. Join us to explore, innovate, and collaborate!</p>
+    </section>
+
+    <section class="about-section">
+        <h2>About Us</h2>
+        <p>TechHub is a community-driven platform for tech enthusiasts. We aim to connect innovators, developers, and creators, providing resources and knowledge to drive innovation.</p>
+        <p>We organize events, host forums, and share the latest in technology to keep our community ahead of the curve.</p>
+    </section>
+
+    <section class="team-section">
+        <h2>Meet Our Team</h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="images (9).jpeg" alt="Dhruv Agrawal">
+                <h3>Dhruv Agrawal</h3>
+                <p>Lead Web Designer and Director of the Project</p>
+            </div>
+            <div class="card">
+                <img src="images (6).jpeg" alt="Rakshita Shrivastava">
+                <h3>Rakshita Shrivastava</h3>
+                <p>Front-End Developer and CEO of the Project</p>
+            </div>
+            <div class="card">
+                <img src="download (5).jpeg" alt="Palak Bhatia">
+                <h3>Palak Bhatia</h3>
+                <p>Back-End Developer and CMO of the Project</p>
+            </div>
+            <div class="card">
+                <img src="download (4).jpeg" alt="Anusha Chauhan">
+                <h3>Anusha Chauhan</h3>
+                <p>Front-End Developer Senior Manager of the Project</p>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer -->
+     <footer>
+        <h3>About TechHub</h3>
+        <p>TechHub connects innovators, environmentalists, and experts for a sustainable future.</p>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="Stories.html">Stories</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+        </ul>
+        <div>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+        <p class="copy">©️ 2024 TechHub. All rights reserved.</p>
+    </footer>
+</body>
+</html>

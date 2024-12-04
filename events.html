@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechHub - Events</title>
+    <link rel="stylesheet" href="event.css">
+    <style>
+        /* ⚠️⚠️⚠️⚠️ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #1a1a2e, #16213e);
+            color: #f9f9f9;
+            margin-top: 70px;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .navbar h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ff4c60;
+            text-transform: uppercase;
+        }
+
+        .navbar a {
+            color: #fff;
+            font-size: 1rem;
+            margin: 0 12px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #ff4c60;
+        }
+
+        .navbar a.active {
+            color: #ff4c60;
+            font-weight: bold;
+        }
+
+        /* Welcome Message */
+        .welcome-message {
+            background: linear-gradient(135deg, #ff4c60, #ff758c);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-weight: bold;
+            margin-top: 110px;
+        }
+
+        .welcome-message marquee {
+            font-size: 1.2rem;
+        }
+
+        /* Heading */
+        h1 {
+            text-align: center;
+            color: #ff758c;
+            margin: 40px 0 20px;
+            font-size: 2.5rem;
+        }
+
+        /* Event Section */
+        .event-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card {
+            background: linear-gradient(145deg, #2f2f44, #23233c);
+            margin: 15px;
+            padding: 20px;
+            width: 300px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .card h2 {
+            color: #ff758c;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card p.title {
+            color: #f9f9f9;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #e3e3e3;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .card a {
+            color: #ff758c;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .card a:hover {
+            color: #fff;
+        }
+
+        /* Footer Styles */
+        footer {
+            padding: 40px 20px;
+            background: #0a0a0a;
+            text-align: center;
+            color: #ddd;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        footer h3 {
+            color: #ff2a68;
+            text-shadow: 0 0 10px rgba(255, 42, 104, 1);
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin: 10px 0;
+        }
+
+        footer ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        footer ul li a:hover {
+            color: #ff2a68;
+            text-shadow: 0 0 10px rgba(255, 42, 104, 1);
+        }
+
+        footer img {
+            width: 35px;
+            margin: 0 5px;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        footer img:hover {
+            transform: scale(1.2);
+            filter: brightness(1.5);
+        }
+
+        footer .copy {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            #navlist {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            section {
+                padding: 15px;
+            }
+
+            .discussion-section input,
+            .discussion-section textarea {
+                width: 80%;
+            }
+
+            .poll-options {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <h1>TechHub</h1>
+                <div>
+                    <a href="home.html">Home</a>
+                    <a href="events.html" class="active">Events</a>
+                    <a href="about_us.html">About Us</a>
+                    <a href="https://forms.gle/HjHu85DN9PMzi6Ac8">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="welcome-message">
+        <marquee>WELCOME TECH ENTHUSIASTS! DISCOVER UPCOMING TECH EVENTS AT TECHHUB</marquee>
+    </div>
+
+    <h1>Upcoming Events</h1>
+    <section class="event-section">
+        <div class="card">
+            <img src="4.jpg" alt="AI Revolution Summit 2024">
+            <a href="https://news.un.org/en/story/2024/11/1157086"><h2>AI Revolution Summit 2024</h2></a>
+            <p class="title">Exploring the Future of Artificial Intelligence</p>
+            <p>Join industry leaders, researchers, and innovators to discuss the transformative power of AI and its role in shaping the future of technology and society.</p>
+        </div>
+        <div class="card">
+            <img src="11.jpeg" alt="Global Tech Innovation Forum">
+            <a href="https://globaltechnologysummit.com/"><h2>Global Tech Innovation Forum</h2></a>
+            <p class="title">Where Innovation Meets Opportunity</p>
+            <p>A global platform for showcasing groundbreaking technologies, startups, and visionary ideas aimed at addressing the challenges of tomorrow.</p>
+        </div>
+        <div class="card">
+            <img src="10.jpeg" alt="Quantum Computing Conference">
+            <a href="https://quantum.iitm.ac.in/qcmc24/"><h2>Quantum Computing Conference</h2></a>
+            <p class="title">Unraveling Quantum Breakthroughs</p>
+            <p>Explore the latest advancements in quantum computing and how they are set to redefine industries, from cryptography to artificial intelligence.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3>About TechHub</h3>
+        <p>TechHub connects innovators, environmentalists, and experts for a sustainable future.</p>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="Stories.html">Stories</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+        </ul>
+        <div>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+        <p class="copy">©️ 2024 TechHub. All rights reserved.</p>
+    </footer>
+</body>
+</html>
